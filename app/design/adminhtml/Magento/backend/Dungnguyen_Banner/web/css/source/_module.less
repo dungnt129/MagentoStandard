@@ -1,0 +1,12 @@
+@dungnguyen-icons-admin__font-name-path: '@{baseDir}fonts/Dungnguyen/icomoon';     /* Đường dẫn đến file fonts (không có đuôi) */
+@dungnguyen-icons-admin__font-name : 'Dungnguyen';     /* Font name tự đặt */
+.lib-font-face(
+  @family-name:@dungnguyen-icons-admin__font-name,
+  @font-path: @dungnguyen-icons-admin__font-name-path,
+  @font-weight: normal,
+  @font-style: normal
+);
+.admin__menu .item-banner-manager.parent.level-0 > a:before {     /* Chú ý item-banner-manager là class sinh ra dựa vào id module */
+  font-family: @dungnguyen-icons-admin__font-name;
+  content: "\e90e";     /* Mã của icon */
+}
