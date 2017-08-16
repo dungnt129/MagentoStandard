@@ -1,8 +1,10 @@
 var config = {
     paths: {
-        "simple_weather": "Dungnguyen_Bai2/js/jquery.simpleWeather.min"
+        "bxslider": "Dungnguyen_Banner/js/jquery.bxslider.min",
+        "flexslider": "Dungnguyen_Banner/js/jquery.flexslider-min"
     },
     shim: {
-        "simple_weather": ["jquery"]
+        "bxslider": ["jquery"],
+        "flexslider": ["jquery"]
     }
 };

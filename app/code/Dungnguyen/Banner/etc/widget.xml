@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="dungnguyen_banner_manager" class="Dungnguyen\Banner\Block\Banner\BannerWidget">
+        <label translate="true">Banner Widget</label>
+        <description translate="true">Display Widget</description>
+        <parameters>
+            <parameter name="images_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Images to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="slide_type" xsi:type="select" required="true" visible="true" source_model="Dungnguyen\Banner\Model\Banner\Source\Slidetype">
+                <label translate="true">Type of Slide Images</label>
+                <!--<options>-->
+                    <!--<option name="default" value="product/widget/content/grid.phtml" selected="true">-->
+                        <!--<label translate="true">Products Grid Template</label>-->
+                    <!--</option>-->
+                <!--</options>-->
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

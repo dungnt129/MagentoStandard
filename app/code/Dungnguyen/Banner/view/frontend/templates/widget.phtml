@@ -1,0 +1,47 @@
+<?php
+$slideType = $this->getData('slide_type');
+$data = $this->getData('banners');
+?>
+
+<?php if($slideType == 1) : ?>
+<link rel="stylesheet" type="text/css" href="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('Dungnguyen_Banner::css/jquery.bxslider.css') ?>"/>
+<?php elseif($slideType == 2): ?>
+<link rel="stylesheet" type="text/css" href="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('Dungnguyen_Banner::css/flexslider.css') ?>"/>
+<?php endif; ?>
+
+<div class="flexslider">
+    <ul class="bxslider slides">
+        <?php
+        foreach ($data as $d) {
+            ?>
+            <li>
+                <a href="<?php echo $d['link'] ?>">
+                    <img src="<?php echo $this->getData('mediaURL') . $d['image']; ?>"/>
+                </a>
+            </li>
+            <?php
+        }
+        ?>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    <?php if($slideType == 1) : ?>
+    require(['jquery', 'bxslider'], function ($) {
+        $(function () {
+            $('.bxslider').bxSlider({
+                auto: true,
+                pager: true
+            });
+        });
+    });
+    <?php elseif($slideType == 2): ?>
+    require(['jquery', 'flexslider'], function ($) {
+        $(function () {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+        });
+    });
+    <?php endif; ?>
+</script>
