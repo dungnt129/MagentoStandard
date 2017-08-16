@@ -65,6 +65,10 @@ class Save extends \Magento\Backend\App\Action
                 $data['id'] = null;
             }
 
+            if (empty($data['images'])) {
+                $data['images'] = null;
+            }
+
             /** @var \Dungnguyen\Banner\Model\Banner $model */
             $model = $this->_objectManager->create('Dungnguyen\Banner\Model\Banner');
 
@@ -72,6 +76,8 @@ class Save extends \Magento\Backend\App\Action
             if ($id) {
                 $model->load($id);
             }
+
+            $data['image'] = !empty($data['images']) ? $data['images'][0]['name'] : '';
 
             $model->setData($data);
 
