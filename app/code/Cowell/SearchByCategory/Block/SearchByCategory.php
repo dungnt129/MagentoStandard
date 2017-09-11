@@ -47,6 +47,7 @@ class SearchByCategory extends Template
      */
     public function getStoreCategories($sorted = false, $asCollection = false, $toLoad = true)
     {
+		$a;
         return $this->_categoryHelper->getStoreCategories($sorted, $asCollection, $toLoad);
     }
 
@@ -56,6 +57,15 @@ class SearchByCategory extends Template
      */
     public function getChildCategories($category)
     {
+		print_r($category2);
+		print_r($category);
+		
+		switch($category) {
+			case 1:
+			case 2:
+				break;
+		}
+		
         if ($this->categoryFlatConfig->isFlatEnabled() && $category->getUseFlatResource()) {
             $subcategories = (array)$category->getChildrenNodes();
         } else {
